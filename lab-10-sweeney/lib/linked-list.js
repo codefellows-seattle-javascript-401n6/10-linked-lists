@@ -1,13 +1,21 @@
 'use strict';
 
 class ListNode {
-  constructor(value, next) {
+  
+  constructor(val,next){
+    this.val = val;
+    this.next = next;
   }
+  
 }
 
 class LinkedList {
   constructor() {
-  }
+      this.root = null;
+      }
+    }
+
+  
 
   static fromArray(items) {
     // Build the list up backwards.
@@ -17,10 +25,15 @@ class LinkedList {
     // Then make another node and point it to the second-to-last node.
     // Do this until the list is entirely built up.
 
-    let previousNode = null
+    let previousNode = null;
+    let list = new LinkedList();
     for (var i = items.length - 1; i >= 0; i--) {
+
+     let list = previousNode.prepend(i);
+
     }
 
+    let root = prepend(list.val);
     // set the root to point to the last node added at the front of the chain.
   }
 
@@ -45,6 +58,10 @@ class LinkedList {
   }
 
   prepend(value) {
+    let node = new ListNode(value);
+    node.next = this.root; 
+    this.root = node;
+    this.length++;
   }
 
   remove(value) {

@@ -5,6 +5,7 @@ class ListNode {
   constructor(val,next){
     this.val = val;
     this.next = next;
+    // this.size++;
   }
   
 }
@@ -12,6 +13,7 @@ class ListNode {
 class LinkedList {
   constructor() {
       this.root = null;
+      this.size=0;
       }
     }
 
@@ -29,16 +31,16 @@ class LinkedList {
     let list = new LinkedList();
     for (var i = items.length - 1; i >= 0; i--) {
 
-     let list = previousNode.prepend(i);
+     let list = previousNode.prepend(items[i]);
 
     }
 
-    let root = prepend(list.val);
+    
     // set the root to point to the last node added at the front of the chain.
   }
 
   // you get this method for free.
-  toString() {
+  LinkedList.toString() {
     let result = 'root';
     let current = this.root;
     while(current) {
@@ -48,23 +50,36 @@ class LinkedList {
     return result + ' -> null';
   }
 
-  isEmpty() {
+  LinkedList.isEmpty() {
   }
 
-  size() {
-  }
+  LinkedList.listSize() {
+    
+    let current = this.root;
+     while(current){
+      current = current.next;
+      this.size++;
+    }
+  } 
 
-  append(value) {
-  }
+  LinkedList.append(value) {
+    let node = new ListNode(value);
+    let current = this.root;
+    while(current){
+      current = current.next;
+    }
+    current = node;
+    this.size++;
+  };
 
-  prepend(value) {
+  LinkedList.prepend(value) {
     let node = new ListNode(value);
     node.next = this.root; 
     this.root = node;
-    this.length++;
+    this.size++;
   }
 
-  remove(value) {
+  LinkedList.remove(value) {
     // rewrite the root node if the value is at the front.
 
     // start at the front
@@ -74,7 +89,7 @@ class LinkedList {
     // make the current node point to the node after the node we're removing
   }
 
-  find(value) {
+  LinkedList.find(value) {
   }
 
   hasCycle() {
@@ -132,4 +147,4 @@ class LinkedList {
   }
 }
 
-module.exports = {LinkedList, ListNode}
+module.exports = {LinkedList, ListNode};

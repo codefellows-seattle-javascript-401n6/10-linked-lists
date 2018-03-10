@@ -241,7 +241,7 @@ describe('Stretch Goal: Common Interview Questions', () => {
     expect(list4.hasCycle()).toEqual(true);
   });
 
-  test.skip('list.getMiddle() should return middle node', () => {
+  test('list.getMiddle() should return middle node', () => {
     let list = LinkedList.fromArray([4, 5, 6]);
     let middle = list.getMiddle();
     expect(middle.value).toEqual(5);
@@ -251,7 +251,7 @@ describe('Stretch Goal: Common Interview Questions', () => {
     expect(middle.value).toEqual(5);
   });
 
-  test.skip('list.reverse() should reverse the list', () => {
+  test('list.reverse() should reverse the list', () => {
     let list = LinkedList.fromArray([4, 5, 6]);
     list.reverse();
     expect(list.root.value).toEqual(6);
@@ -261,26 +261,26 @@ describe('Stretch Goal: Common Interview Questions', () => {
 });
 
 describe('Stretch Goal: Functional Methods', () => {
-  test.skip('list.forEach(appender) should append items to a string', () => {
+  test('list.forEach(appender) should append items to a string', () => {
     let result = '';
     let list = LinkedList.fromArray([1,2,3]);
     list.forEach(n => result += n.value + ' ');
     expect(result).toEqual('1 2 3 ');
   });
 
-  test.skip('list.map(doubler) should double a list', () => {
+  test('list.map(doubler) should double a list', () => {
     let list = LinkedList.fromArray([1,2,3]);
     let result = list.map(n => n.value * 2);
     expect(result).toEqual(LinkedList.fromArray([2,4,6]));
   });
 
-  test.skip('list.filter(isEven) should filter out odd numbers', () => {
+  test('list.filter(isEven) should filter out odd numbers', () => {
     let list = LinkedList.fromArray([1,2,3,4]);
     let result = list.filter(n => n.value % 2 === 0);
     expect(result).toEqual(LinkedList.fromArray([2,4]));
   })
 
-  test.skip('list.reduce(adder) should reduce list', () => {
+  test('list.reduce(adder) should reduce list', () => {
     let list = LinkedList.fromArray([1,2,3]);
     let result = list.reduce((p, n) => p + n.value, 0);
     expect(result).toEqual(6);

@@ -2,11 +2,14 @@
 
 class ListNode {
   constructor(value, next) {
+    this.value = value;
+    this.next = next || null;
   }
 }
 
 class LinkedList {
   constructor() {
+    this.root = null;
   }
 
   static fromArray(items) {
@@ -17,11 +20,18 @@ class LinkedList {
     // Then make another node and point it to the second-to-last node.
     // Do this until the list is entirely built up.
 
-    let previousNode = null
+    let previousNode = null;
     for (var i = items.length - 1; i >= 0; i--) {
+      let value = items[i];
+      let node = new ListNode(value);
+      node.next = previousNode;
+      previousNode = node;
     }
 
     // set the root to point to the last node added at the front of the chain.
+    let list = new LinkedList();
+    list.root = previousNode;
+    return list;
   }
 
   // you get this method for free.

@@ -204,23 +204,23 @@ describe('Stretch Goal: create getNthFromLast convenience methods (hard difficul
 });
 
 describe('Stretch Goal: Common Interview Questions', () => {
-  test.skip('list.hasCycle() returns false when there is no loop in the list', () => {
+  test('list.hasCycle() returns false when there is no loop in the list', () => {
     let list = LinkedList.fromArray([4, 5, 6]);
     expect(list.hasCycle()).toEqual(false);
   });
 
-  test.skip('list.hasCycle() returns false when the list is empty', () => {
+  test('list.hasCycle() returns false when the list is empty', () => {
     let list = LinkedList.fromArray([]);
     expect(list.hasCycle()).toEqual(false);
   });
 
-  test.skip('list.hasCycle() returns true if there\'s just one node with a loop', () => {
+  test('list.hasCycle() returns true if there\'s just one node with a loop', () => {
     let list = LinkedList.fromArray([1]);
     list.root.next = list.root;
     expect(list.hasCycle()).toEqual(true);
   });
 
-  test.skip('list.hasCycle() returns true when there is a loop in the list', () => {
+  test('list.hasCycle() returns true when there is a loop in the list', () => {
     let list1 = LinkedList.fromArray([4, 5, 6]);
     let list2 = LinkedList.fromArray([4, 5, 6]);
     let list3 = LinkedList.fromArray([4, 5, 6]);

@@ -46,9 +46,12 @@ class LinkedList {
   }
 
   isEmpty() {
+    return this.root === null;
+    return true;
   }
 
   size() {
+    
   }
 
   append(value) {

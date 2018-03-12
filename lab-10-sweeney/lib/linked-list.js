@@ -2,38 +2,49 @@
 
 class ListNode {
   
-  constructor(val,next){
-    this.val = val;
-    this.next = next;
+  constructor(value,next){
+
+    this.value = value;
+    this.next = null;
+    
+
+    console.log("value", this.value);
+    console.log("next", this.next);
+    // this.size++;
   }
   
 }
 
 class LinkedList {
   constructor() {
-      this.root = null;
-      }
-    }
+    this.root = null;
+    this.size = 0;
+  }
+    
+    
 
   
 
-  static fromArray(items) {
+  static fromArray(arr) {
     // Build the list up backwards.
     // Start by creating the last node that points to nothing.
     // Then make the second-to-last node and point it
     // to the last node.
     // Then make another node and point it to the second-to-last node.
     // Do this until the list is entirely built up.
-
+    let items = arr;
+    console.log("items",items);
     let previousNode = null;
     let list = new LinkedList();
     for (var i = items.length - 1; i >= 0; i--) {
 
-     let list = previousNode.prepend(i);
+      list = previousNode.append(items[i]);
+
+    console.log("item", items[i]);
 
     }
-
-    let root = prepend(list.val);
+    console.log("list", list);
+    
     // set the root to point to the last node added at the front of the chain.
   }
 
@@ -47,21 +58,33 @@ class LinkedList {
     }
     return result + ' -> null';
   }
-
   isEmpty() {
   }
 
-  size() {
-  }
+  listSize() {
+    
+    let current = this.root;
+    while(current){
+      current = current.next;
+      this.size++;
+    }
+  } 
 
   append(value) {
-  }
+    let node = new ListNode(value);
+    let current = this.root;
+    while(current){
+      current = current.next;
+    }
+    current = node;
+    this.size++;
+  };
 
   prepend(value) {
     let node = new ListNode(value);
     node.next = this.root; 
     this.root = node;
-    this.length++;
+    this.size++;
   }
 
   remove(value) {
@@ -130,6 +153,8 @@ class LinkedList {
 
   reduce(cb, initial) {
   }
-}
+};
 
-module.exports = {LinkedList, ListNode}
+
+
+module.exports = {LinkedList, ListNode};

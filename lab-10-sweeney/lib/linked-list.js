@@ -2,17 +2,11 @@
 
 class ListNode {
   
-  constructor(value,next){
-
+  constructor(value, next){
     this.value = value;
-    this.next = null;
-    
 
-    console.log("value", this.value);
-    console.log("next", this.next);
-    // this.size++;
+    this.next = next || null;
   }
-  
 }
 
 class LinkedList {

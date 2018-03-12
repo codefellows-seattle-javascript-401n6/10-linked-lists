@@ -1,26 +1,44 @@
 'use strict';
 
 class ListNode {
-  constructor(value, next) {
+  
+  constructor(value, next){
+    this.value = value;
+
+    this.next = next || null;
   }
 }
 
 class LinkedList {
   constructor() {
+    this.root = null;
+    this.size = 0;
   }
+    
+    
 
-  static fromArray(items) {
+  
+
+  static fromArray(arr) {
     // Build the list up backwards.
     // Start by creating the last node that points to nothing.
     // Then make the second-to-last node and point it
     // to the last node.
     // Then make another node and point it to the second-to-last node.
     // Do this until the list is entirely built up.
-
-    let previousNode = null
+    let items = arr;
+    console.log("items",items);
+    let previousNode = null;
+    let list = new LinkedList();
     for (var i = items.length - 1; i >= 0; i--) {
-    }
 
+      list = previousNode.append(items[i]);
+
+    console.log("item", items[i]);
+
+    }
+    console.log("list", list);
+    
     // set the root to point to the last node added at the front of the chain.
   }
 
@@ -34,17 +52,33 @@ class LinkedList {
     }
     return result + ' -> null';
   }
-
   isEmpty() {
   }
 
-  size() {
-  }
+  listSize() {
+    
+    let current = this.root;
+    while(current){
+      current = current.next;
+      this.size++;
+    }
+  } 
 
   append(value) {
-  }
+    let node = new ListNode(value);
+    let current = this.root;
+    while(current){
+      current = current.next;
+    }
+    current = node;
+    this.size++;
+  };
 
   prepend(value) {
+    let node = new ListNode(value);
+    node.next = this.root; 
+    this.root = node;
+    this.size++;
   }
 
   remove(value) {
@@ -113,6 +147,8 @@ class LinkedList {
 
   reduce(cb, initial) {
   }
-}
+};
 
-module.exports = {LinkedList, ListNode}
+
+
+module.exports = {LinkedList, ListNode};

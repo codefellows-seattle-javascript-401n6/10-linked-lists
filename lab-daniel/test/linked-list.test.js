@@ -42,7 +42,7 @@ describe('Essential creation tests', function(){
     expect(list.toString()).toEqual('root -> 3 -> 4 -> null');
   });
 
-  test.skip('list.fromArray builds a linked list from an Array', () => {
+  test('list.fromArray builds a linked list from an Array', () => {
     let list = LinkedList.fromArray([1,2,3,4])
     expect(list.root.value).toEqual(1)
     expect(list.root.next.value).toEqual(2)
@@ -52,24 +52,24 @@ describe('Essential creation tests', function(){
 });
 
 describe('O(1) Methods (easy difficulty)', function(){
-  test.skip('list.isEmpty() should be true for empty list', () => {
+  test('list.isEmpty() should be true for empty list', () => {
     let list = new LinkedList();
     expect(list.isEmpty()).toEqual(true)
   });
 
-  test.skip('list.isEmpty() should be false for non-empty list', () => {
+  test('list.isEmpty() should be false for non-empty list', () => {
     let list = new LinkedList();
     list.append(1);
     expect(list.isEmpty()).toEqual(false)
   });
 
-  test.skip('list.prepend(node) should node to empty list', () => {
+  test('list.prepend(node) should node to empty list', () => {
     let list = new LinkedList();
     list.prepend(5)
     expect(list.root.value).toBe(5);
   });
 
-  test.skip('list.prepend(node) should node to non-empty list', () => {
+  test('list.prepend(node) should node to non-empty list', () => {
     let list = new LinkedList();
     list.prepend(5)
     list.prepend(4)

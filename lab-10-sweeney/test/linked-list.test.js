@@ -11,6 +11,8 @@ describe('Essential creation tests', function(){
     let blue = new ListNode(4);
     expect(blue.value).toEqual(4);
     expect(blue.next).toEqual(null);
+    console.log("blue value", blue.value);
+    console.log("blue next", blue.next );
 
     let green = new ListNode(3, blue);
     expect(green.value).toEqual(3);

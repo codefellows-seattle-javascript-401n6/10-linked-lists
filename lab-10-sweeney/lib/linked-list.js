@@ -2,9 +2,14 @@
 
 class ListNode {
   
-  constructor(val,next){
-    this.val = val;
-    this.next = next;
+  constructor(value,next){
+
+    this.value = value;
+    this.next = null;
+    
+
+    console.log("value", this.value);
+    console.log("next", this.next);
     // this.size++;
   }
   
@@ -12,35 +17,39 @@ class ListNode {
 
 class LinkedList {
   constructor() {
-      this.root = null;
-      this.size=0;
-      }
-    }
+    this.root = null;
+    this.size = 0;
+  }
+    
+    
 
   
 
-  static fromArray(items) {
+  static fromArray(arr) {
     // Build the list up backwards.
     // Start by creating the last node that points to nothing.
     // Then make the second-to-last node and point it
     // to the last node.
     // Then make another node and point it to the second-to-last node.
     // Do this until the list is entirely built up.
-
+    let items = arr;
+    console.log("items",items);
     let previousNode = null;
     let list = new LinkedList();
     for (var i = items.length - 1; i >= 0; i--) {
 
-     let list = previousNode.prepend(items[i]);
+      list = previousNode.append(items[i]);
+
+    console.log("item", items[i]);
 
     }
-
+    console.log("list", list);
     
     // set the root to point to the last node added at the front of the chain.
   }
 
   // you get this method for free.
-  LinkedList.toString() {
+  toString() {
     let result = 'root';
     let current = this.root;
     while(current) {
@@ -49,20 +58,19 @@ class LinkedList {
     }
     return result + ' -> null';
   }
-
-  LinkedList.isEmpty() {
+  isEmpty() {
   }
 
-  LinkedList.listSize() {
+  listSize() {
     
     let current = this.root;
-     while(current){
+    while(current){
       current = current.next;
       this.size++;
     }
   } 
 
-  LinkedList.append(value) {
+  append(value) {
     let node = new ListNode(value);
     let current = this.root;
     while(current){
@@ -72,14 +80,14 @@ class LinkedList {
     this.size++;
   };
 
-  LinkedList.prepend(value) {
+  prepend(value) {
     let node = new ListNode(value);
     node.next = this.root; 
     this.root = node;
     this.size++;
   }
 
-  LinkedList.remove(value) {
+  remove(value) {
     // rewrite the root node if the value is at the front.
 
     // start at the front
@@ -89,7 +97,7 @@ class LinkedList {
     // make the current node point to the node after the node we're removing
   }
 
-  LinkedList.find(value) {
+  find(value) {
   }
 
   hasCycle() {
@@ -145,6 +153,8 @@ class LinkedList {
 
   reduce(cb, initial) {
   }
-}
+};
+
+
 
 module.exports = {LinkedList, ListNode};

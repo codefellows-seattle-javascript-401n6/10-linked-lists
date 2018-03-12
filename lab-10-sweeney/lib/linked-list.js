@@ -26,15 +26,24 @@ class LinkedList {
     // to the last node.
     // Then make another node and point it to the second-to-last node.
     // Do this until the list is entirely built up.
+
+    // how do I prepend a value of null? jest doesn't like it
+
     let items = arr;
     console.log("items",items);
-    let previousNode = null;
+    let previous = null;
+    // let next = null;
+    // let current = this.root;
     let list = new LinkedList();
+    console.log("list before", list);
     for (var i = items.length - 1; i >= 0; i--) {
 
-      list = previousNode.append(items[i]);
+      if(list.root === null ){
+        list.root = items[i];
+        console.log("item root", items[i]);
+      }
 
-    console.log("item", items[i]);
+      list = list.prepend(items[i]);
 
     }
     console.log("list", list);

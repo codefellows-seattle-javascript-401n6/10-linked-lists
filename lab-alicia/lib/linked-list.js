@@ -53,32 +53,64 @@ class LinkedList {
       };
 
       append(value) {
-    }
-  
-    prepend(value) {
-    }
-  
-    remove(value) {
-      // rewrite the root node if the value is at the front.
-  
-      // start at the front
-      // look for a node that points to the node we want to remove.
-  
-      // save the result
-      // make the current node point to the node after the node we're removing
-    }
-  
+        if (this.root === null) {
+          this.root = new ListNode(value, null);
+        } else {
+          let currentNode = this.root;
+          while (currentNode) {
+            if (currentNode.next === null) {
+              currentNode.next = new ListNode(value, null);
+              break;
+            }
+            currentNode = currentNode.next;
+          }
+        }
+      };
+    
+      prepend(value) {
+        if (this.root !== null) {
+          let previousNode = this.root;
+          this.root = new ListNode(value, previousNode);
+        } else {
+          this.root = new ListNode(value, null);
+        }
+      };
+    
+      remove(value) {
+        if (this.root.value === value) {
+          this.root = this.root.next;
+        } else {
+          let previousNode = this.root;
+          let currentNode = previousNode.next;
+          let nextNode = currentNode.next;
+          while (currentNode !== null) {
+            if (currentNode.value === value) {
+              previousNode.next = nextNode;
+              break;
+            } else {
+              previousNode = currentNode;
+              currentNode = previousNode.next;
+              nextNode = currentNode.next;
+            }
+          }
+        }
+      };
+
     find(value) {
-    }
+
+    };
   
     hasCycle() {
-    }
+
+    };
   
     reverse() {
-    }
+
+    };
   
     getMiddle(list) {
-    }
+
+    };
   
     getNthFromLast(n) {
       // make two pointers and start them at the front.
@@ -88,33 +120,43 @@ class LinkedList {
       // now move both nodes forward simultaneously.
       // When the offset node hits the end of the list
       // the nBehind node will be N nodes from the end of the list.
-    }
+    };
   
     getLast() {
       return this.getNthFromLast(0);
-    }
+    };
+
     getSecondFromLast() {
       return this.getNthFromLast(1);
-    }
+    };
+
     getThirdFromLast() {
       return this.getNthFromLast(2);
-    }
+    };
   
     getNth(n) {
       // step forward N times.
-    }
+    };
   
     getFirst() {
-    }
+
+    };
   
     getSecond() {
-    }
+    
+    };
+
+
   
     getThird() {
-    }
+    
+    };
+
   
     forEach(cb) {
-    }
+    
+    };
+
   
     map(cb) {
 

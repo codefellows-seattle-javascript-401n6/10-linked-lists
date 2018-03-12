@@ -4,6 +4,9 @@ class ListNode {
   constructor(value, next) {
     this.value = value;
     this.next = next || null;
+    if (next) {
+      this.next = next;
+    }
   }
 }
 
@@ -13,8 +16,6 @@ class LinkedList {
   }
 
   static fromArray(items) {
-
-
     let previousNode = null;
     for (var i = items.length - 1; i >= 0; i--) {
       let value = items[i];
@@ -25,7 +26,8 @@ class LinkedList {
 
     // set the root to point to the last node added at the front of the chain.
     let list = new LinkedList();
-    list.root = previousNode;
+     list.root = previousNode;
+   
     return list;
   }
 
@@ -41,7 +43,7 @@ class LinkedList {
   }
 
   isEmpty() {
-    if (this.root === null){
+    if (this.root === null) {
       return true;
     } else {
       return false;
@@ -49,13 +51,36 @@ class LinkedList {
   } 
 
   size() {
+    let size = 0;
+    let currentNode = this.root;
+    while(currentNode){
+      currentNode = currentNode.next;
+      size++;
+    }
     
+    return size;
   }
 
   append(value) {
+    if( this.root === null) {
+      this.root = new ListNode(value, null);
+    } else {
+      let currentNode = this.root;
+      while (currentNode) {
+        if (currentNode.next === null) {
+          currentNode.next = new ListNode(value, null);
+          break;
+        }
+        currentNode = currentNode.next
+      }
+    }
   }
 
   prepend(value) {
+    let node = new ListNode(value);
+    node.next = this.root;
+    this.root = node;
+    this.length++;
   }
 
   remove(value) {

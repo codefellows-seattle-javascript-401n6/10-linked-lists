@@ -13,12 +13,7 @@ class LinkedList {
   }
 
   static fromArray(items) {
-    // Build the list up backwards.
-    // Start by creating the last node that points to nothing.
-    // Then make the second-to-last node and point it
-    // to the last node.
-    // Then make another node and point it to the second-to-last node.
-    // Do this until the list is entirely built up.
+
 
     let previousNode = null;
     for (var i = items.length - 1; i >= 0; i--) {
@@ -46,9 +41,12 @@ class LinkedList {
   }
 
   isEmpty() {
-    return this.root === null;
-    return true;
-  }
+    if (this.root === null){
+      return true;
+    } else {
+      return false;
+    }
+  } 
 
   size() {
     

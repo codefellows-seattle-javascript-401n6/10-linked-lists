@@ -50,6 +50,7 @@ describe('Essential creation tests', function(){
     expect(list.root.next.value).toEqual(2)
     expect(list.root.next.next.value).toEqual(3)
     expect(list.root.next.next.next.value).toEqual(4)
+    console.log(list.root.value);
   });
 });
 

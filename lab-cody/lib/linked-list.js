@@ -2,13 +2,8 @@
 
 class ListNode {
   constructor(value, next) {
-    this.data = value;
-    this.next = next || null;
-
-    if (next) {
-      this.next = next;
-    }
-
+    this.value = value;
+    this.next = null;
   }
 }
 

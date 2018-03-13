@@ -14,14 +14,13 @@ class LinkedList {
     constructor() {
         this.root = null;
     };
-
     static fromArray(items) {
         let newList = new LinkedList();
         for (var i = items.length - 1; i >= 0; i--) {
             newList.prepend(items[i]);
         }
         return newList;
-    }
+    };
 
     // you get this method for free.
     toString() {
@@ -31,25 +30,26 @@ class LinkedList {
             result += ' -> ' + current.value;
             current = current.next;
         }
-        return result + ' -> null';
+        return result + ' -> null ';
     };
 
+    // returns true if the list is empty
     isEmpty() {
-        if (this.root === null) {
+      // return this.root === null; // will evaluate to true or false
+        if (this.root === null || this.root === undefined) {
             return true;
-        } else {
-            return false;
         }
+        return false;
     };
 
     size() {
-        let size = 0;
+        let count = 0;
         let currentNode = this.root;
-        while (currentNode) {
+        while (currentNode !== null) {
           currentNode = currentNode.next;
-          size++;
+          count++;
         }
-        return size;
+        return count;
       };
 
       append(value) {

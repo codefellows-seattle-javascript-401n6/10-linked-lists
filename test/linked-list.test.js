@@ -7,7 +7,7 @@ describe('Essential creation tests', function(){
     expect(1).toEqual(1);
   });
 
-  test.skip('new ListNode should create a node', () => {
+  test('new ListNode should create a node', () => {
     let blue = new ListNode(4);
     expect(blue.value).toEqual(4);
     expect(blue.next).toEqual(null);

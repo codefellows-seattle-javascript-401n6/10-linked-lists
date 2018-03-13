@@ -50,7 +50,7 @@ class LinkedList {
   }
 
   isEmpty() {
-    if (this.root === null) {
+    if (this.root === null || this.root === undefined) {
       return true;
     }else{
       return false;

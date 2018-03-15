@@ -87,25 +87,25 @@ describe('O(N) Methods (medium difficulty)', function(){
     expect(list.size()).toEqual(0);
   });
 
-  test.skip('list.size() should be 1 for one-node list', () => {
+  test('list.size() should be 1 for one-node list', () => {
     let list = new LinkedList();
     list.append(1);
     expect(list.size()).toEqual(1)
   });
 
-  test.skip('list.size() should be correct for many node list.', () => {
+  test('list.size() should be correct for many node list.', () => {
     let list = LinkedList.fromArray([1,2,3,4])
     expect(list.size()).toEqual(4)
   });
 
-  test.skip('list.append(value) should append node to empty list', () => {
+  test('list.append(value) should append node to empty list', () => {
     let list = new LinkedList();
     list.append(0);
     expect(list.root.value).toBe(0);
   });
 
 
-  test.skip('list.append(value) should append node to non-empty list', () => {
+  test('list.append(value) should append node to non-empty list', () => {
     let list = new LinkedList();
     list.append(0);
     list.append(3);
@@ -123,7 +123,7 @@ describe('O(N) Methods (medium difficulty)', function(){
     expect(list.getNth(3)).toEqual(list.root.next.next.next);
   });
 
-  test.skip('list.find(value) return fist node containg value', () => {
+  test.skip('list.find(value) return fist node containing value', () => {
     let list = LinkedList.fromArray([1,2,3,2,1]);
     let result = list.find(2);
     expect(list.root.next).toEqual(result);

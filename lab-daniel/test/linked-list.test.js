@@ -82,7 +82,7 @@ describe('O(1) Methods (easy difficulty)', function(){
 });
 
 describe('O(N) Methods (medium difficulty)', function(){
-  test.skip('list.size() should be 0 for empty list', () => {
+  test('list.size() should be 0 for empty list', () => {
     let list = new LinkedList();
     expect(list.size()).toEqual(0);
   });

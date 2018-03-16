@@ -115,7 +115,7 @@ describe('O(N) Methods (medium difficulty)', function(){
     expect(list.root.next.next.value).toEqual(4);
   });
 
-  test.skip('list.getNth returns the node at a specific index', () => {
+  test('list.getNth returns the node at a specific index', () => {
     let list = LinkedList.fromArray([1,2,3,4]);
     expect(list.getNth(0)).toEqual(list.root);
     expect(list.getNth(1)).toEqual(list.root.next);
@@ -123,7 +123,7 @@ describe('O(N) Methods (medium difficulty)', function(){
     expect(list.getNth(3)).toEqual(list.root.next.next.next);
   });
 
-  test.skip('list.find(value) return fist node containing value', () => {
+  test('list.find(value) return fist node containing value', () => {
     let list = LinkedList.fromArray([1,2,3,2,1]);
     let result = list.find(2);
     expect(list.root.next).toEqual(result);

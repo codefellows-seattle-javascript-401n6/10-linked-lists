@@ -23,7 +23,7 @@ class LinkedList {
     // Then make another node and point it to the second-to-last node.
     // Do this until the list is entirely built up.
     let newList = new LinkedList();
-    for (var i = items.length - 1; i >= 0; i--) {
+    for (var i = items.length -1; i >= 0; i--) {
       newList.prepend(items[i]);
     }
     return newList;
@@ -197,7 +197,7 @@ class LinkedList {
         return currentNode;
       } else {
         currentNode = currentNode.next;
-        index;
+        index++;
       }
     }
     return currentNode;

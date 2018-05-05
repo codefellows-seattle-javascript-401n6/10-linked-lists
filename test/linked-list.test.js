@@ -138,7 +138,7 @@ describe('O(N) Methods (medium difficulty)', function(){
     expect(list.root).toBe(null)
   });
 
-  test.skip('list.remove(value) should remove node from front of list', () => {
+  test('list.remove(value) should remove node from front of list', () => {
     let list = LinkedList.fromArray([0,1,2,3,4,5,6,7,8])
     list.remove(0);
     expect(list.root.value).toBe(1);

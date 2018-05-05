@@ -100,14 +100,14 @@ describe('O(N) Methods (medium difficulty)', function(){
     expect(list.size()).toEqual(4)
   });
 
-  test.skip('list.append(value) should append node to empty list', () => {
+  test('list.append(value) should append node to empty list', () => {
     let list = new LinkedList();
     list.append(0);
     expect(list.root.value).toBe(0);
   });
 
 
-  test.skip('list.append(value) should append node to non-empty list', () => {
+  test('list.append(value) should append node to non-empty list', () => {
     let list = new LinkedList();
     list.append(0);
     list.append(3);
@@ -117,7 +117,7 @@ describe('O(N) Methods (medium difficulty)', function(){
     expect(list.root.next.next.value).toEqual(4);
   });
 
-  test.skip('list.getNth returns the node at a specific index', () => {
+  test('list.getNth returns the node at a specific index', () => {
     let list = LinkedList.fromArray([1,2,3,4]);
     expect(list.getNth(0)).toEqual(list.root);
     expect(list.getNth(1)).toEqual(list.root.next);
@@ -125,13 +125,13 @@ describe('O(N) Methods (medium difficulty)', function(){
     expect(list.getNth(3)).toEqual(list.root.next.next.next);
   });
 
-  test.skip('list.find(value) return fist node containg value', () => {
+  test('list.find(value) return fist node containg value', () => {
     let list = LinkedList.fromArray([1,2,3,2,1]);
     let result = list.find(2);
     expect(list.root.next).toEqual(result);
   });
 
-  test.skip('list.remove(value) should remove node from one-element list', () => {
+  test('list.remove(value) should remove node from one-element list', () => {
     let list = new LinkedList()
     list.append(42);
     list.remove(42);

@@ -71,7 +71,7 @@ describe('O(1) Methods (easy difficulty)', function(){
     expect(list.root.value).toBe(5);
   });
 
-  test.skip('list.prepend(node) should node to non-empty list', () => {
+  test('list.prepend(node) should node to non-empty list', () => {
     let list = new LinkedList();
     list.prepend(5)
     list.prepend(4)
@@ -84,18 +84,18 @@ describe('O(1) Methods (easy difficulty)', function(){
 });
 
 describe('O(N) Methods (medium difficulty)', function(){
-  test.skip('list.size() should be 0 for empty list', () => {
+  test('list.size() should be 0 for empty list', () => {
     let list = new LinkedList();
     expect(list.size()).toEqual(0);
   });
 
-  test.skip('list.size() should be 1 for one-node list', () => {
+  test('list.size() should be 1 for one-node list', () => {
     let list = new LinkedList();
     list.append(1);
     expect(list.size()).toEqual(1)
   });
 
-  test.skip('list.size() should be correct for many node list.', () => {
+  test('list.size() should be correct for many node list.', () => {
     let list = LinkedList.fromArray([1,2,3,4])
     expect(list.size()).toEqual(4)
   });

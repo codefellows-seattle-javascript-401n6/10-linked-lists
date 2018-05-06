@@ -144,14 +144,14 @@ describe('O(N) Methods (medium difficulty)', function(){
     expect(list.root.value).toBe(1);
   });
 
-  test.skip('list.remove(value) should remove node from middle of list', () => {
+  test('list.remove(value) should remove node from middle of list', () => {
     let list = LinkedList.fromArray([0,1,2,3,4,5,6,7,8])
     list.remove(3);
     expect(list.root.next.next.value).toBe(2);
     expect(list.root.next.next.next.value).toBe(4);
   });
 
-  test.skip('list.remove(value) should remove node from end of list', () => {
+  test('list.remove(value) should remove node from end of list', () => {
     let list = LinkedList.fromArray([0,1,2,3,4,5,6,7,8])
     list.remove(8);
     expect(list.root.next.next.next.next.next.next.next.value).toBe(7);
@@ -160,7 +160,7 @@ describe('O(N) Methods (medium difficulty)', function(){
 });
 
 describe('Convenience methods', () => {
-  test.skip('list.getFirst() list.getSecond() and list.getThird() (easy difficulty)', () => {
+  test('list.getFirst() list.getSecond() and list.getThird() (easy difficulty)', () => {
     let list = LinkedList.fromArray([1,2,3,4]);
     expect(list.getFirst()).toEqual(list.root);
     expect(list.getSecond()).toEqual(list.root.next);

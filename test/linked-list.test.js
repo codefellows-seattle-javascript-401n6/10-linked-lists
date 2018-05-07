@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 const {LinkedList, ListNode} = require('../lib/linked-list');
 
@@ -7,7 +7,7 @@ describe('Essential creation tests', function(){
     expect(1).toEqual(1);
   });
 
-  test.skip('new ListNode should create a node', () => {
+  test('new ListNode should create a node', () => {
     let blue = new ListNode(4);
     expect(blue.value).toEqual(4);
     expect(blue.next).toEqual(null);
@@ -93,7 +93,7 @@ describe('O(N) Methods (medium difficulty)', function(){
     expect(list.size()).toEqual(1)
   });
 
-  test.skip('list.size() should be correct for many node list.', () => {
+  test('list.size() should be correct for many node list.', () => {
     let list = LinkedList.fromArray([1,2,3,4])
     expect(list.size()).toEqual(4)
   });
@@ -123,33 +123,33 @@ describe('O(N) Methods (medium difficulty)', function(){
     expect(list.getNth(3)).toEqual(list.root.next.next.next);
   });
 
-  test.skip('list.find(value) return fist node containg value', () => {
+  test('list.find(value) return fist node containg value', () => {
     let list = LinkedList.fromArray([1,2,3,2,1]);
     let result = list.find(2);
     expect(list.root.next).toEqual(result);
   });
 
-  test.skip('list.remove(value) should remove node from one-element list', () => {
+  test('list.remove(value) should remove node from one-element list', () => {
     let list = new LinkedList()
     list.append(42);
     list.remove(42);
     expect(list.root).toBe(null)
   });
 
-  test.skip('list.remove(value) should remove node from front of list', () => {
+  test('list.remove(value) should remove node from front of list', () => {
     let list = LinkedList.fromArray([0,1,2,3,4,5,6,7,8])
     list.remove(0);
     expect(list.root.value).toBe(1);
   });
 
-  test.skip('list.remove(value) should remove node from middle of list', () => {
+  test('list.remove(value) should remove node from middle of list', () => {
     let list = LinkedList.fromArray([0,1,2,3,4,5,6,7,8])
     list.remove(3);
     expect(list.root.next.next.value).toBe(2);
     expect(list.root.next.next.next.value).toBe(4);
   });
 
-  test.skip('list.remove(value) should remove node from end of list', () => {
+  test('list.remove(value) should remove node from end of list', () => {
     let list = LinkedList.fromArray([0,1,2,3,4,5,6,7,8])
     list.remove(8);
     expect(list.root.next.next.next.next.next.next.next.value).toBe(7);
@@ -158,7 +158,7 @@ describe('O(N) Methods (medium difficulty)', function(){
 });
 
 describe('Convenience methods', () => {
-  test.skip('list.getFirst() list.getSecond() and list.getThird() (easy difficulty)', () => {
+  test('list.getFirst() list.getSecond() and list.getThird() (easy difficulty)', () => {
     let list = LinkedList.fromArray([1,2,3,4]);
     expect(list.getFirst()).toEqual(list.root);
     expect(list.getSecond()).toEqual(list.root.next);
@@ -169,13 +169,13 @@ describe('Convenience methods', () => {
 });
 
 describe('Stretch Goal: create getNthFromLast convenience methods (hard difficulty)', () => {
-  test.skip('list.getLast() should return last node', () => {
+  test('list.getLast() should return last node', () => {
     let list = LinkedList.fromArray([3, 4, 5, 6]);
     let result = list.getLast();
     expect(result.value).toEqual(6);
   });
 
-  test.skip('list.getNthFromLast() should return nth from last node', () => {
+  test('list.getNthFromLast() should return nth from last node', () => {
     let list = LinkedList.fromArray([3, 4, 5, 6]);
     let result = list.getNthFromLast(0);
     expect(result.value).toEqual(6);
@@ -196,7 +196,7 @@ describe('Stretch Goal: create getNthFromLast convenience methods (hard difficul
     expect(result.value).toEqual(5);
   });
 
-  test.skip('list.getThirdFromLast() should return third from last node', () => {
+  test('list.getThirdFromLast() should return third from last node', () => {
     let list = LinkedList.fromArray([3, 4, 5, 6]);
     let result = list.getThirdFromLast();
     expect(result.value).toEqual(4);
@@ -204,12 +204,12 @@ describe('Stretch Goal: create getNthFromLast convenience methods (hard difficul
 });
 
 describe('Stretch Goal: Common Interview Questions', () => {
-  test.skip('list.hasCycle() returns false when there is no loop in the list', () => {
+  test('list.hasCycle() returns false when there is no loop in the list', () => {
     let list = LinkedList.fromArray([4, 5, 6]);
     expect(list.hasCycle()).toEqual(false);
   });
 
-  test.skip('list.hasCycle() returns false when the list is empty', () => {
+  test('list.hasCycle() returns false when the list is empty', () => {
     let list = LinkedList.fromArray([]);
     expect(list.hasCycle()).toEqual(false);
   });
@@ -220,7 +220,7 @@ describe('Stretch Goal: Common Interview Questions', () => {
     expect(list.hasCycle()).toEqual(true);
   });
 
-  test.skip('list.hasCycle() returns true when there is a loop in the list', () => {
+  test('list.hasCycle() returns true when there is a loop in the list', () => {
     let list1 = LinkedList.fromArray([4, 5, 6]);
     let list2 = LinkedList.fromArray([4, 5, 6]);
     let list3 = LinkedList.fromArray([4, 5, 6]);
@@ -241,7 +241,7 @@ describe('Stretch Goal: Common Interview Questions', () => {
     expect(list4.hasCycle()).toEqual(true);
   });
 
-  test.skip('list.getMiddle() should return middle node', () => {
+  test('list.getMiddle() should return middle node', () => {
     let list = LinkedList.fromArray([4, 5, 6]);
     let middle = list.getMiddle();
     expect(middle.value).toEqual(5);
@@ -251,7 +251,7 @@ describe('Stretch Goal: Common Interview Questions', () => {
     expect(middle.value).toEqual(5);
   });
 
-  test.skip('list.reverse() should reverse the list', () => {
+  test('list.reverse() should reverse the list', () => {
     let list = LinkedList.fromArray([4, 5, 6]);
     list.reverse();
     expect(list.root.value).toEqual(6);

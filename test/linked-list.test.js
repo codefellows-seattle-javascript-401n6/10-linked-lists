@@ -7,7 +7,7 @@ describe('Essential creation tests', function(){
     expect(1).toEqual(1);
   });
 
-  test.skip('new ListNode should create a node', () => {
+  test('new ListNode should create a node', () => {
     let blue = new ListNode(4);
     expect(blue.value).toEqual(4);
     expect(blue.next).toEqual(null);
@@ -18,7 +18,7 @@ describe('Essential creation tests', function(){
     expect(green.next.value).toEqual(4);
   });
 
-  test.skip('can create a LinkedList and attach nodes together', () => {
+  test('can create a LinkedList and attach nodes together', () => {
     let list = new LinkedList();
     let three = new ListNode(3);
     let four = new ListNode(4);
@@ -31,7 +31,7 @@ describe('Essential creation tests', function(){
     expect(list.root.next.next).toEqual(null);
   });
 
-  test.skip('list.toString() represents the list', () => {
+  test('list.toString() represents the list', () => {
     let list = new LinkedList();
     let three = new ListNode(3);
     let four = new ListNode(4);
@@ -42,7 +42,7 @@ describe('Essential creation tests', function(){
     expect(list.toString()).toEqual('root -> 3 -> 4 -> null');
   });
 
-  test.skip('list.fromArray builds a linked list from an Array', () => {
+  test('list.fromArray builds a linked list from an Array', () => {
     let list = LinkedList.fromArray([1,2,3,4])
     expect(list.root.value).toEqual(1)
     expect(list.root.next.value).toEqual(2)
@@ -57,19 +57,19 @@ describe('O(1) Methods (easy difficulty)', function(){
     expect(list.isEmpty()).toEqual(true)
   });
 
-  test.skip('list.isEmpty() should be false for non-empty list', () => {
+  test('list.isEmpty() should be false for non-empty list', () => {
     let list = new LinkedList();
     list.append(1);
     expect(list.isEmpty()).toEqual(false)
   });
 
-  test.skip('list.prepend(node) should node to empty list', () => {
+  test('list.prepend(node) should node to empty list', () => {
     let list = new LinkedList();
     list.prepend(5)
     expect(list.root.value).toBe(5);
   });
 
-  test.skip('list.prepend(node) should node to non-empty list', () => {
+  test('list.prepend(node) should node to non-empty list', () => {
     let list = new LinkedList();
     list.prepend(5)
     list.prepend(4)
@@ -82,18 +82,18 @@ describe('O(1) Methods (easy difficulty)', function(){
 });
 
 describe('O(N) Methods (medium difficulty)', function(){
-  test.skip('list.size() should be 0 for empty list', () => {
+  test('list.size() should be 0 for empty list', () => {
     let list = new LinkedList();
     expect(list.size()).toEqual(0);
   });
 
-  test.skip('list.size() should be 1 for one-node list', () => {
+  test('list.size() should be 1 for one-node list', () => {
     let list = new LinkedList();
     list.append(1);
     expect(list.size()).toEqual(1)
   });
 
-  test.skip('list.size() should be correct for many node list.', () => {
+  test('list.size() should be correct for many node list.', () => {
     let list = LinkedList.fromArray([1,2,3,4])
     expect(list.size()).toEqual(4)
   });

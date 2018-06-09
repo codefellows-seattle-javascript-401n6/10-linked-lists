@@ -43,11 +43,11 @@ describe('Essential creation tests', function(){
   });
 
   test('list.fromArray builds a linked list from an Array', () => {
-    let list = LinkedList.fromArray([1,2,3,4])
-    expect(list.root.value).toEqual(1)
-    expect(list.root.next.value).toEqual(2)
-    expect(list.root.next.next.value).toEqual(3)
-    expect(list.root.next.next.next.value).toEqual(4)
+    let list = LinkedList.fromArray([1,2,3,4]);
+    expect(list.root.value).toEqual(1);
+    expect(list.root.next.value).toEqual(2);
+    expect(list.root.next.next.value).toEqual(3);
+    expect(list.root.next.next.next.value).toEqual(4);
   });
 });
 
@@ -65,15 +65,15 @@ describe('O(1) Methods (easy difficulty)', function(){
 
   test('list.prepend(node) should node to empty list', () => {
     let list = new LinkedList();
-    list.prepend(5)
+    list.prepend(5);
     expect(list.root.value).toBe(5);
   });
 
   test('list.prepend(node) should node to non-empty list', () => {
     let list = new LinkedList();
-    list.prepend(5)
-    list.prepend(4)
-    list.prepend(0)
+    list.prepend(5);
+    list.prepend(4);
+    list.prepend(0);
     expect(list.root.value).toBe(0);
     expect(list.root.next.value).toBe(4);
     expect(list.root.next.next.value).toBe(5);

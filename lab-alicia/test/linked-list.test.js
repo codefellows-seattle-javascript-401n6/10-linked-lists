@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 const {LinkedList, ListNode} = require('../lib/linked-list.js');
 
@@ -7,7 +7,7 @@ describe('Essential creation tests', function(){
     expect(1).toEqual(1);
   });
 
-  test.skip('new ListNode should create a node', () => {
+  test('new ListNode should create a node', () => {
     let blue = new ListNode(4);
     expect(blue.value).toEqual(4);
     expect(blue.next).toEqual(null);
@@ -18,7 +18,7 @@ describe('Essential creation tests', function(){
     expect(green.next.value).toEqual(4);
   });
 
-  test.skip('can create a LinkedList and attach nodes together', () => {
+  test('can create a LinkedList and attach nodes together', () => {
     let list = new LinkedList();
     let three = new ListNode(3);
     let four = new ListNode(4);
@@ -31,7 +31,7 @@ describe('Essential creation tests', function(){
     expect(list.root.next.next).toEqual(null);
   });
 
-  test.skip('list.toString() represents the list', () => {
+  test('list.toString() represents the list', () => {
     let list = new LinkedList();
     let three = new ListNode(3);
     let four = new ListNode(4);
@@ -42,38 +42,38 @@ describe('Essential creation tests', function(){
     expect(list.toString()).toEqual('root -> 3 -> 4 -> null');
   });
 
-  test.skip('list.fromArray builds a linked list from an Array', () => {
-    let list = LinkedList.fromArray([1,2,3,4])
-    expect(list.root.value).toEqual(1)
-    expect(list.root.next.value).toEqual(2)
-    expect(list.root.next.next.value).toEqual(3)
-    expect(list.root.next.next.next.value).toEqual(4)
+  test('list.fromArray builds a linked list from an Array', () => {
+    let list = LinkedList.fromArray([1,2,3,4]);
+    expect(list.root.value).toEqual(1);
+    expect(list.root.next.value).toEqual(2);
+    expect(list.root.next.next.value).toEqual(3);
+    expect(list.root.next.next.next.value).toEqual(4);
   });
 });
 
 describe('O(1) Methods (easy difficulty)', function(){
-  test.skip('list.isEmpty() should be true for empty list', () => {
+  test('list.isEmpty() should be true for empty list', () => {
     let list = new LinkedList();
-    expect(list.isEmpty()).toEqual(true)
+    expect(list.isEmpty()).toEqual(true);
   });
 
-  test.skip('list.isEmpty() should be false for non-empty list', () => {
+  test('list.isEmpty() should be false for non-empty list', () => {
     let list = new LinkedList();
     list.append(1);
-    expect(list.isEmpty()).toEqual(false)
+    expect(list.isEmpty()).toEqual(false);
   });
 
-  test.skip('list.prepend(node) should node to empty list', () => {
+  test('list.prepend(node) should node to empty list', () => {
     let list = new LinkedList();
-    list.prepend(5)
+    list.prepend(5);
     expect(list.root.value).toBe(5);
   });
 
-  test.skip('list.prepend(node) should node to non-empty list', () => {
+  test('list.prepend(node) should node to non-empty list', () => {
     let list = new LinkedList();
-    list.prepend(5)
-    list.prepend(4)
-    list.prepend(0)
+    list.prepend(5);
+    list.prepend(4);
+    list.prepend(0);
     expect(list.root.value).toBe(0);
     expect(list.root.next.value).toBe(4);
     expect(list.root.next.next.value).toBe(5);
@@ -82,30 +82,30 @@ describe('O(1) Methods (easy difficulty)', function(){
 });
 
 describe('O(N) Methods (medium difficulty)', function(){
-  test.skip('list.size() should be 0 for empty list', () => {
+  test('list.size() should be 0 for empty list', () => {
     let list = new LinkedList();
     expect(list.size()).toEqual(0);
   });
 
-  test.skip('list.size() should be 1 for one-node list', () => {
+  test('list.size() should be 1 for one-node list', () => {
     let list = new LinkedList();
     list.append(1);
-    expect(list.size()).toEqual(1)
+    expect(list.size()).toEqual(1);
   });
 
-  test.skip('list.size() should be correct for many node list.', () => {
-    let list = LinkedList.fromArray([1,2,3,4])
-    expect(list.size()).toEqual(4)
+  test('list.size() should be correct for many node list.', () => {
+    let list = LinkedList.fromArray([1,2,3,4]);
+    expect(list.size()).toEqual(4);
   });
 
-  test.skip('list.append(value) should append node to empty list', () => {
+  test('list.append(value) should append node to empty list', () => {
     let list = new LinkedList();
     list.append(0);
     expect(list.root.value).toBe(0);
   });
 
 
-  test.skip('list.append(value) should append node to non-empty list', () => {
+  test('list.append(value) should append node to non-empty list', () => {
     let list = new LinkedList();
     list.append(0);
     list.append(3);
@@ -115,7 +115,7 @@ describe('O(N) Methods (medium difficulty)', function(){
     expect(list.root.next.next.value).toEqual(4);
   });
 
-  test.skip('list.getNth returns the node at a specific index', () => {
+  test('list.getNth returns the node at a specific index', () => {
     let list = LinkedList.fromArray([1,2,3,4]);
     expect(list.getNth(0)).toEqual(list.root);
     expect(list.getNth(1)).toEqual(list.root.next);
@@ -123,42 +123,42 @@ describe('O(N) Methods (medium difficulty)', function(){
     expect(list.getNth(3)).toEqual(list.root.next.next.next);
   });
 
-  test.skip('list.find(value) return fist node containg value', () => {
+  test('list.find(value) return fist node containg value', () => {
     let list = LinkedList.fromArray([1,2,3,2,1]);
     let result = list.find(2);
     expect(list.root.next).toEqual(result);
   });
 
-  test.skip('list.remove(value) should remove node from one-element list', () => {
-    let list = new LinkedList()
+  test('list.remove(value) should remove node from one-element list', () => {
+    let list = new LinkedList();
     list.append(42);
     list.remove(42);
-    expect(list.root).toBe(null)
+    expect(list.root).toBe(null);
   });
 
-  test.skip('list.remove(value) should remove node from front of list', () => {
-    let list = LinkedList.fromArray([0,1,2,3,4,5,6,7,8])
+  test('list.remove(value) should remove node from front of list', () => {
+    let list = LinkedList.fromArray([0,1,2,3,4,5,6,7,8]);
     list.remove(0);
     expect(list.root.value).toBe(1);
   });
 
-  test.skip('list.remove(value) should remove node from middle of list', () => {
-    let list = LinkedList.fromArray([0,1,2,3,4,5,6,7,8])
+  test('list.remove(value) should remove node from middle of list', () => {
+    let list = LinkedList.fromArray([0,1,2,3,4,5,6,7,8]);
     list.remove(3);
     expect(list.root.next.next.value).toBe(2);
     expect(list.root.next.next.next.value).toBe(4);
   });
 
-  test.skip('list.remove(value) should remove node from end of list', () => {
-    let list = LinkedList.fromArray([0,1,2,3,4,5,6,7,8])
+  test('list.remove(value) should remove node from end of list', () => {
+    let list = LinkedList.fromArray([0,1,2,3,4,5,6,7,8]);
     list.remove(8);
-    expect(list.root.next.next.next.next.next.next.next.value).toBe(7);
+    (list.root.next.next.next.next.next.next.next.value).toBe(7);
     expect(list.root.next.next.next.next.next.next.next.next).toBe(null);
   });
 });
 
 describe('Convenience methods', () => {
-  test.skip('list.getFirst() list.getSecond() and list.getThird() (easy difficulty)', () => {
+  test('list.getFirst() list.getSecond() and list.getThird() (easy difficulty)', () => {
     let list = LinkedList.fromArray([1,2,3,4]);
     expect(list.getFirst()).toEqual(list.root);
     expect(list.getSecond()).toEqual(list.root.next);
@@ -183,10 +183,10 @@ describe('Stretch Goal: create getNthFromLast convenience methods (hard difficul
     result = list.getNthFromLast(1);
     expect(result.value).toEqual(5);
 
-    result = list.getNthFromLast(2)
+    result = list.getNthFromLast(2);
     expect(result.value).toEqual(4);
 
-    result = list.getNthFromLast(3)
+    result = list.getNthFromLast(3);
     expect(result.value).toEqual(3);
   });
 
@@ -278,7 +278,7 @@ describe('Stretch Goal: Functional Methods', () => {
     let list = LinkedList.fromArray([1,2,3,4]);
     let result = list.filter(n => n.value % 2 === 0);
     expect(result).toEqual(LinkedList.fromArray([2,4]));
-  })
+  });
 
   test.skip('list.reduce(adder) should reduce list', () => {
     let list = LinkedList.fromArray([1,2,3]);

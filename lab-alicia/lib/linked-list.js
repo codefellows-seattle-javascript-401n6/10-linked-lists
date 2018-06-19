@@ -13,12 +13,11 @@ class ListNode {
 class LinkedList {
   constructor() {
     this.root = null;
-    this.tail = null;
   }
 
   static fromArray(items) {
     let newList = new LinkedList();
-    for (var i = items.length - 1; i >= 0; i--) {
+    for (var i = items.length -1; i >= 0; i--) {
       newList.prepend(items[i]);
     }
     return newList;
@@ -46,9 +45,9 @@ class LinkedList {
 
   size() {
     let size = 0;
-    let currentNode = this.root;
-    while (currentNode) {
-      currentNode = currentNode.next;
+    let current = this.root;
+    while (current) {
+      current = current.next;
       size++;
     }
     return size;  
@@ -71,8 +70,8 @@ class LinkedList {
     
   prepend(value) {
     if (this.root !== null) {
-      let previousNode = this.root;
-      this.root = new ListNode(value, previousNode);
+      let previous = this.root;
+      this.root = new ListNode(value, previous);
     } else {
       this.root = new ListNode(value, null);
     }
@@ -84,27 +83,27 @@ class LinkedList {
     } else {
       let previous = this.root;
       let current = previous.next;
-      let nextNode = current.next;
-      while (current !== null) {
+      while (current) {
         if (current.value === value) {
-          previous.next = nextNode;
+          previous.next = current.next;
+          current = current.next;
           break;
         } else {
           previous = current;
-          current = previous.next;
-          nextNode = current.next;
+          current = current.next;
         }
       }
     }
   }
 
   find(value) {
-    let current =this.root;
+    let current = this.root;
     while(current) {
       if (current.value === value) {
         return current;
+      } else {
+        current = current.next;
       }
-      current = current.next;
     }
     // return false;
     return -1;
@@ -172,19 +171,23 @@ class LinkedList {
   }
   
   getFirst() {
-    return this.root;
+    return this.getNth(0);
   }
   
   getSecond() {
-    return this.root.next;
+    return this.getNth(1);
   }
   
   getThird() {
-    return this.root.next.next;
+    return this.getNth(2);
   }
 
   forEach(cb) {
-    
+    let current = this.root;
+    while (current) {
+      cb(current);
+      current = current.next;
+    }
   }
 
   

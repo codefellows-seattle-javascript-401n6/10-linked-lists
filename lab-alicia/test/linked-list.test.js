@@ -152,7 +152,7 @@ describe('O(N) Methods (medium difficulty)', function(){
   test('list.remove(value) should remove node from end of list', () => {
     let list = LinkedList.fromArray([0,1,2,3,4,5,6,7,8]);
     list.remove(8);
-    (list.root.next.next.next.next.next.next.next.value).toBe(7);
+    expect(list.root.next.next.next.next.next.next.next.value).toBe(7);
     expect(list.root.next.next.next.next.next.next.next.next).toBe(null);
   });
 });
@@ -261,7 +261,7 @@ describe('Stretch Goal: Common Interview Questions', () => {
 });
 
 describe('Stretch Goal: Functional Methods', () => {
-  test.skip('list.forEach(appender) should append items to a string', () => {
+  test('list.forEach(appender) should append items to a string', () => {
     let result = '';
     let list = LinkedList.fromArray([1,2,3]);
     list.forEach(n => result += n.value + ' ');
